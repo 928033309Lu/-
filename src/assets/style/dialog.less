@@ -1,0 +1,33 @@
+.el-dialog.commonDialog{
+  background-color: transparent;
+  .el-dialog__header{
+    height:30px;
+    line-height: 30px;
+    background:rgba(14,29,50,0.85);
+    opacity:0.85;
+    border-radius:3px 3px 0px 0px;
+    padding: 0 13px;
+    .el-dialog__title{
+      font-size:14px;
+      color: @commonColor;
+    }
+    .el-dialog__headerbtn{
+      right: 13px;
+      top: 8px;
+      i{
+        color: @commonColor;
+      }
+      &:hover{
+        i{
+          color: @solidColor;
+        }
+      }
+
+    }
+  }
+  .el-dialog__body{
+    padding: 14px 20px 20px 20px;
+    background:rgba(14,32,53,0.8);
+    border-radius:0px 0px 3px 3px;
+  }
+}

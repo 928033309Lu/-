@@ -1,0 +1,202 @@
+.transition-box{
+  width: 100%;
+  max-height: 266px;
+  .transition-box__header{
+    height: 39px;
+    margin-bottom: 1px;
+    padding: 0 15px;
+    display: flex;
+    background: rgba(14,29,50,0.85);
+    box-shadow:0px 2px 1px 0px rgba(0,27,36,0.85);
+    justify-content: space-between;
+    align-items: center;
+    .transition-box__title{
+      font-size:14px;
+      font-weight:bold;
+      color:rgba(255,255,255,1);
+    }
+    .transition-box__page{
+      font-size:13px;
+      font-weight:400;
+      color: #D4EFF6;
+      margin-left: 32px;
+      .transition-box__pageNum{
+        color: #2CD0B9;
+      }
+    }
+    .transition-box__headerbtn{
+      background: 0 0;
+      border: none;
+      outline: 0;
+      cursor: pointer;
+      i{
+        font-size: 18px;
+        color: @commonColor;
+      }
+      &:hover{
+        i{
+          color: @solidColor;
+        }
+      }
+    }
+  }
+  .transition-box__body{
+    background:rgba(14,32,53,0.8);
+    padding: 0 15px 15px 15px;
+    box-sizing: border-box;
+    height: calc(100% - 40px);
+  }
+}
+.commonTable.el-table{
+  border: 1px solid #5C6D72;
+  // border-bottom: none;
+  color: #D4EFF6;
+  background-color: transparent;
+  &.overallProgressTable{
+    th{
+      .el-checkbox{
+        display:none;
+      }
+    }
+    tbody{
+      tr:nth-child(1),tr:nth-child(2){
+        .el-checkbox{
+        display:none;
+      }
+      }
+    }
+  }
+  &.bigPartShipTable{
+    tbody{
+
+      tr{
+        td:nth-child(1):before{
+          content:'';
+          width:5px;
+          height:100%;
+          position:absolute;
+          left:0;
+          top:0;
+          background-color:@cellOneColor;
+        }
+        &:nth-child(2){
+          td:nth-child(1):before{
+            background-color:@cellTwoColor;
+          }
+        }
+        &:nth-child(3){
+          td:nth-child(1):before{
+            background-color:@cellThreeColor;
+          }
+        }
+        &:nth-child(4){
+          td:nth-child(1):before{
+            background-color:@cellFourColor;
+          }
+        }
+        &:nth-child(5){
+          td:nth-child(1):before{
+            background-color:@cellFiveColor;
+          }
+        }
+        &:nth-child(6){
+          td:nth-child(1):before{
+            background-color:@cellSixColor;
+          }
+        }
+      }
+    }
+    .cell{
+      .el-checkbox__inner{
+        border-color:@tableCheckBoxColor;
+        background-color:transparent;
+      }
+      .el-checkbox__input.is-checked .el-checkbox__inner, .el-checkbox__input.is-indeterminate .el-checkbox__inner{
+        background-color:rgba(44,208,185,0.78);
+        border-color:rgba(44,208,185,0.78);
+      }
+      .table-text{
+        color:@tableTextColor1;
+        text-decoration: underline;
+      }
+    }
+  }
+  &:before{
+    display: none;
+  }
+    thead{
+      color: #2CD0B9;
+    }
+    th{
+      background-color: transparent!important;
+    }
+    tr{
+      background-color: transparent;
+      &.error-style{
+        background-color: rgba(252,16,49,0.2);
+      }
+    }
+    th,td{
+      border-color: @tableBorderColor;
+      padding: 2px 0;
+      &.is-leaf{
+        border-color:@tableBorderColor;
+      }
+      &.gutter{
+        border-bottom: 1px solid @tableBorderColor;
+      }
+      .cell{
+        text-align: center;
+      }
+    }
+    .cell{
+      .el-checkbox__inner{
+        border-color:@tableCheckBoxColor;
+        background-color:transparent;
+      }
+      .el-checkbox__input.is-checked .el-checkbox__inner, .el-checkbox__input.is-indeterminate .el-checkbox__inner{
+        background-color:rgba(44,208,185,0.78);
+        border-color:rgba(44,208,185,0.78);
+      }
+      .table-text{
+        color:@tableTextColor1;
+        text-decoration: underline;
+      }
+      .set-road{
+        color:@underLineColor;
+        text-decoration: underline;
+        display:block;
+        width:100%;
+        height:100%;
+        overflow: hidden;
+        text-overflow:ellipsis;
+        white-space: nowrap;
+      }
+    }
+  &.el-table--enable-row-hover{
+    tr:hover>td{
+      cursor: pointer;
+      background:rgba(123,194,224,0.1);
+    }
+  }
+  &.bigPartTable{
+    &.el-table--border {
+      thead{
+        tr:nth-child(2){
+          .cell{
+            color:@tableTextColor
+          }
+          th:nth-child(2n+1){
+            border-right:none;
+          }
+        }
+      }
+      tbody td:not(:first-child):nth-child(2n){
+        border-right:none!important;
+        .cell{
+          color:@tableTextColor;
+        }
+      }
+    }
+  }
+}
